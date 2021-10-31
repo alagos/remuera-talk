@@ -3,7 +3,7 @@
  *
  * By Hakim El Hattab, http://hakim.se
  */
-@import url(./fonts/source-sans-pro/source-sans-pro.css);
+@import url(./fonts/open-sans/open-sans.css);
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
   color: #222;
 }
@@ -12,14 +12,14 @@ section.has-light-background, section.has-light-background h1, section.has-light
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #191919;
-  --r-main-font: Source Sans Pro, Helvetica, sans-serif;
+  --r-background-color: #2D2C00;
+  --r-main-font: Open Sans, Helvetica, sans-serif;
   --r-main-font-size: 42px;
-  --r-main-color: #fff;
+  --r-main-color: #FFFE87;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
-  --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-heading-color: #fff;
+  --r-heading-font: Open Sans, Helvetica, sans-serif;
+  --r-heading-color: #E9E61D;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
@@ -83,7 +83,6 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-weight: var(--r-heading-font-weight);
   line-height: var(--r-heading-line-height);
   letter-spacing: var(--r-heading-letter-spacing);
-  text-transform: var(--r-heading-text-transform);
   text-shadow: var(--r-heading-text-shadow);
   word-wrap: break-word;
 }
@@ -137,6 +136,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal strong,
 .reveal b {
   font-weight: bold;
+}
+.reveal i {
+  font-style: italic;
 }
 
 .reveal em {
@@ -281,7 +283,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 .reveal small {
-  display: inline-block;
+  display: contents;
   font-size: 0.6em;
   line-height: 1.2em;
   vertical-align: top;
@@ -347,6 +349,39 @@ section.has-light-background, section.has-light-background h1, section.has-light
   color: var(--r-link-color);
 }
 
+/*********************************************
+ * OVERLAPPED IMAGES
+ *********************************************/
+.reveal .image-stack {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.reveal .image-stack-1 {
+  grid-row: 1;
+  grid-column: 2 / 12;
+}
+
+.reveal .image-stack-2 {
+  grid-row: 1;
+  grid-column: 1 / span 8;
+  padding-top: 20%;
+  z-index: 1;
+}
+.reveal .image-stack-3 {
+  grid-row: 1;
+  grid-column: 3 / span 9;
+  padding-top: 8%;
+  z-index: 2;
+}
+.reveal .container {
+  display: flex;
+}
+
+.reveal .col {
+  flex: 1;
+}
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/
